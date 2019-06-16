@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.8.2)
+  - ESPullToRefresh (2.9)
+  - ReachabilitySwift (4.3.1)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.8.2)
+  - ESPullToRefresh (= 2.9)
+  - ReachabilitySwift (= 4.3.1)
+  - RxCocoa (= 5.0.0)
+  - RxSwift (= 5.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - ESPullToRefresh
+    - ReachabilitySwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  ESPullToRefresh: ce058a36454a5032519cc9d8b45da217728cf104
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+
+PODFILE CHECKSUM: c7d995a6deff3db30ef88ed393572e7a3b6cc4f1
+
+COCOAPODS: 1.5.0
