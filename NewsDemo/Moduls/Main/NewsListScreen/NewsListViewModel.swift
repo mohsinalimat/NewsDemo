@@ -7,11 +7,11 @@
 //
 
 import RxSwift
-
+import RxRelay
 class NewsListViewModel:ViewModel {
 
     // MARK: Variable
-    var articleList: Variable<[Article]> =  Variable([])
+    var articleList =  BehaviorRelay<[Article]>(value:[])
     private let disposeBag = DisposeBag()
     let NewsListRepo: NewsListRepository!
 
@@ -73,9 +73,9 @@ private extension NewsListViewModel {
         }
         switch type {
         case .refresh:
-            self.articleList.value = list
+            self.articleList.accept(list)
         default:
-            self.articleList.value.append(contentsOf: list)
+            self.articleList.accept( self.articleList.value + list)
         }
         
         
