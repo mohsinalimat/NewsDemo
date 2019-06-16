@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>BaseServerURL</key>
+	<string>https://newsapi.org/</string>
+	<key>apiKey</key>
+	<string>2e45bb3466704d038af970d8f708ee57</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
