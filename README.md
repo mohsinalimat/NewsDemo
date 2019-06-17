@@ -1,6 +1,10 @@
 # NewsDemo
 
 ### NewsDemo  APP ,  MVVM  + RxSwift  implementation in iOS 
+# ScreenShots
+
+![N|Solid](https://github.com/AliAdam/NewsDemo/screenShots/blob/master/demo.gif?raw=true)
+
 
 ### MVVM architecture + Router
 MVVM (Model-View-ViewModel) is derived from MVC(Model-View-Controller).
