@@ -38,16 +38,9 @@ extension AppDelegate{
     
     /// Set NavigationBar title appearance
     private func setAppearance() {
-        if #available(iOS 11.0, *) {
-            UINavigationBar.appearance().largeTitleTextAttributes =
-                [NSAttributedString.Key.foregroundColor:Colors.brandwhite,
-                 NSAttributedString.Key.font:FontManager.APPMedium.fontWith(size: 25)]
-        } else {
-            // Fallback on earlier versions
             UINavigationBar.appearance().barTintColor = Colors.brandColor
             UINavigationBar.appearance().tintColor = Colors.brandwhite
 
-        }
     }
     
     /// Starts monitoring the network availability status
