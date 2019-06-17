@@ -29,8 +29,9 @@ class NewsListItemCell: UITableViewCell {
 
         self.sourceLabel.textColor = Colors.brandMedGreen
         self.sourceLabel.font = FontManager.APPRegular.fontWith(size: 12)
-
-        
+        self.titLabel.text = ""
+        self.timelabel.text = ""
+        self.sourceLabel.text = ""
         containerView.layer.cornerRadius = 10.0
         
     }

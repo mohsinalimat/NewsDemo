@@ -31,7 +31,7 @@ class NewsListViewModel:ViewModel {
         return self.articleList.value[row].title ?? ""
     }
     func getArticleTime(for row:Int) -> String {
-        return self.articleList.value[row].publishedAt?.dateFromTimestamp?.convertTo() ?? ""
+        return self.articleList.value[row].publishedAt?.dateFromTimestamp?.toDuration() ?? ""
     }
     func getArticleSource(for row:Int) -> String {
         return self.articleList.value[row].source?.name ?? ""

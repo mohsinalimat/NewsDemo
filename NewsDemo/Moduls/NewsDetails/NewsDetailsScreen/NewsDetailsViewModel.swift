@@ -27,7 +27,7 @@ class NewsDetailsViewModel :ViewModel{
         return self.article.title ?? ""
     }
     func getArticleTime() -> String {
-        return self.article.publishedAt?.dateFromTimestamp?.convertTo() ?? ""
+        return self.article.publishedAt?.dateFromTimestamp?.toDuration() ?? ""
     }
     func getArticleSource() -> String {
         return self.article.source?.name ?? ""

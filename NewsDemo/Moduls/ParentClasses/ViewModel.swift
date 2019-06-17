@@ -18,8 +18,8 @@ class ViewModel {
     }
 
     private enum Constants {
-        static let pageSize = 15
-        static let page = 0
+        static let pageSize = 20
+        static let page = 1
     }
     
     // MARK: Variable

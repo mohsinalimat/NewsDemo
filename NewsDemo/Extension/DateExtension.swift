@@ -10,7 +10,7 @@ import Foundation
 extension Date {
     
     
-func convertTo(short: Bool = false) -> String {
+func toDuration(short: Bool = false) -> String {
         
         let now = Date()
         let components = Calendar.autoupdatingCurrent.dateComponents([.year,.month,.weekOfYear,.day,.hour,.minute,.second],from: self,to: now)

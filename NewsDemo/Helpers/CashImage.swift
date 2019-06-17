@@ -50,13 +50,16 @@ class CashImage: NSObject {
         /// showActivityIndicator method you can find it on UIImageView+Extension.swift
         /// i add this method  to  UIImageView class you can show and hide
         /// ActivityIndicator on any imageview  with easy way
-        
+        imageView.image = nil
+
         /// check if image cached or not if exist load it from the cach if not load it
         if  CashImage.default.getImageFor(key: url) != nil{
+            DispatchQueue.main.async {
             imageView.showActivityIndicator()
             let image =  CashImage.default.getImageFor(key: url)!
             imageView.image = image
             imageView.hideActivityIndicator()
+            }
         }
         else{
             CashImage.default.loadImageFor(imageView:imageView,url: url)

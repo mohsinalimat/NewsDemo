@@ -43,6 +43,11 @@ extension UIImageView {
                 self.activityIndicator.startAnimating()
             })
         }
+        else{
+            OperationQueue.main.addOperation({ () -> Void in
+                self.activityIndicator.startAnimating()
+            })
+        }
     }
     
     
