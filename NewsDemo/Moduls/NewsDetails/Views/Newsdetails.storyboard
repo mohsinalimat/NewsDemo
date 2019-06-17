@@ -81,7 +81,6 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pfp-9y-bnD" secondAttribute="bottom" constant="30" id="08r-1S-nke"/>
                                                 <constraint firstItem="asI-Ua-3hh" firstAttribute="leading" secondItem="Mme-fj-7ft" secondAttribute="leading" constant="15" id="Ava-yW-TEU"/>
                                                 <constraint firstAttribute="bottom" secondItem="asI-Ua-3hh" secondAttribute="bottom" constant="10" id="BTQ-Qo-Bx0"/>
                                                 <constraint firstItem="asI-Ua-3hh" firstAttribute="bottom" secondItem="pfp-9y-bnD" secondAttribute="bottom" constant="40" id="K8s-0u-eVG"/>
