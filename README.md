@@ -3,7 +3,7 @@
 ### NewsDemo  APP ,  MVVM  + RxSwift  implementation in iOS 
 # ScreenShots
 
-![N|Solid](https://github.com/AliAdam/NewsDemo/screenShots/blob/master/demo.gif?raw=true)
+![N|Solid](https://github.com/AliAdam/NewsDemo/blob/master/screenShots/demo.gif?raw=true)
 
 
 ### MVVM architecture + Router
