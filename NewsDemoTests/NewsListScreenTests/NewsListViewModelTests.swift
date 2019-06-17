@@ -51,7 +51,7 @@ class NewsListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.getArticleTime(for: index), mockList[index].publishedAt?.dateFromTimestamp?.toDuration() ?? "", "Expected to get same duration for the first item on list")
         XCTAssertEqual(viewModel.getArticleimageURL(for: index), mockList[index].urlToImage, "Expected to get image for the first item on list")
         XCTAssertEqual(viewModel.articleList.value.count, mockList.count, "Expected to get same count as the provided list")
-        XCTAssertEqual(viewModel.getTitle(), LocalizableWords.newsList, "Expected to get  screen title")
+        XCTAssertEqual(viewModel.screenTitle.value, LocalizableWords.newsList, "Expected to get  screen title")
         }
     }
     

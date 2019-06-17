@@ -22,9 +22,9 @@ class NewsListViewControllerTests: XCTestCase {
     }
     
     func testViewData() {
-        XCTAssertEqual(NewsListVC.title, NewsListVC.viewModel.getTitle(), "Expected title to be same as the title  from view model ")
+        XCTAssertEqual(NewsListVC.title, NewsListVC.viewModel.screenTitle.value, "Expected title to be same as the title  from view model ")
         let rowsCount = NewsListVC.tableView.numberOfRows(inSection: 0)
-        XCTAssertEqual(rowsCount,NewsListVC.viewModel.articleList.value.count , "Expected number Of Rows must equal the list coun")
+        XCTAssertEqual(rowsCount,NewsListVC.viewModel.articleList.value.count , "Expected number Of Rows must equal the list count")
 
     }
     

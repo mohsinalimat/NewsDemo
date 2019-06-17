@@ -24,7 +24,12 @@ class NetworkProvider {
         let request = alamofireManager.request(NetworkRouter.getNewsList(parameters))
         request.responseData { [weak self] response in
             if let result: Response<NewsList> = self?.getResult(responseData: response) {
-            completionHandler(result)
+                switch result {
+                case .success(let value):
+                    completionHandler(.success(value))
+                case .error(let error):
+                    completionHandler(.error(error))
+                }
             }
         }
         return request

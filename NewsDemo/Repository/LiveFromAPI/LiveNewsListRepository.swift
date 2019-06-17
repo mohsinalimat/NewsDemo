@@ -16,8 +16,14 @@ class LiveNewsListRepository: NewsListRepository {
         NetworkProvider.shared.getNewsList(with: parameters) {(response) in
             switch response {
             case .success(let result):
+                if result.status == "ok" {
                 let list =  result.articles ?? []
                 completionHandler(.success(list))
+                }
+                else {
+                    let error = NSError(domain: result.message ?? "", code: -1, userInfo: nil)
+                    completionHandler(.error(error))
+                }
             case .error(let error):
                 completionHandler(.error(error))
             }
