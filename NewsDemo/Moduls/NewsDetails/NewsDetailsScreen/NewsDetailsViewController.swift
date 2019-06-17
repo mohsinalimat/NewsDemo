@@ -73,7 +73,7 @@ private extension NewsDetailsViewController {
 extension NewsDetailsViewController:UITableViewDelegate, UITableViewDataSource {
 
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-   return 2
+   return viewModel.getNumberOfRows()
     
 }
 

@@ -23,15 +23,15 @@ struct NewsListBuilder {
         return viewController
     }
     
-    /// get ViewController instanse for unittesting to test it with mock data
-//    static func viewControllerWithMockupsList() -> ViewController {
-//        let rep = MockupsNewsListRepository()
-//        let viewModel = NewsListViewModel(NewsListRepo:rep)
-//        let router = NewsListRouter()
-//        let viewController : NewsListViewController = UIStoryboard.storyboard(.main).instantiateViewController()
-//        viewController.set(withViewModel: viewModel, router: router)
-//        router.viewController = viewController
-//        
-//        return viewController
-//    }
+    // get ViewController instanse for unittesting to test it with mock data
+    static func viewControllerWithMockupsList() -> ViewController {
+        let rep = MockupsNewsListRepository()
+        let viewModel = NewsListViewModel(NewsListRepo:rep)
+        let router = NewsListRouter()
+        let viewController : NewsListViewController = UIStoryboard.storyboard(.main).instantiateViewController()
+        viewController.set(withViewModel: viewModel, router: router)
+        router.viewController = viewController
+        
+        return viewController
+    }
 }

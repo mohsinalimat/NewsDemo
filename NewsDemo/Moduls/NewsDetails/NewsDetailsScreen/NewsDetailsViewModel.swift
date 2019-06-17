@@ -52,6 +52,9 @@ class NewsDetailsViewModel :ViewModel{
         return mutableAttrString
     }
     
+    func getNumberOfRows() -> Int {
+        return 2
+    }
    
     
    
