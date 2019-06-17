@@ -58,10 +58,7 @@ private extension NewsListViewController {
         bindViewModelData()
         handleCellTap()
         handleViewModelErrors()
-        //let items = ["1","2","3"]
-//        self.presentAlertPickerTitle(title: LocalizableWords.error, message: "msg", options:items) { (option) in
-//            print("option: \(option)")
-//        }
+        
     }
 }
 
