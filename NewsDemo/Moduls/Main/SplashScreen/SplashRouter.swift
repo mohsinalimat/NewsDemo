@@ -9,7 +9,7 @@
 import Foundation
 
 class SplashRouter : Router {
-
+    
     func navigateToNewsList() {
         let controller = NewsListBuilder.viewController()
         viewController?.navigationController?.setViewControllers([controller], animated: true)

@@ -26,8 +26,8 @@ extension UIImageView {
         set(newValue) {
             objc_setAssociatedObject(self, &activityIndicatorAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
-   }
-
+    }
+    
     /// add activityIndicator to the center of image view
     func showActivityIndicator() {
         if (self.activityIndicator == nil) {

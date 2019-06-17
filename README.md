@@ -30,7 +30,7 @@ inside module each screen have folder contain MVVM classes
 
 * ```We have only two Modules on the app``` 
 * ```Main```   Splash screen ,   NewsList Screen 
-*  ```NewsDetails```  NewsDetails Screen 
+*  ```NewsDetails```  NewsDetails Screen ,Filter screen (to choose news category and country)
 
 ### Storyboard 
 each module has his own storyboard to make life easer when want to access any view contoller inside module 

@@ -14,12 +14,10 @@ struct LocalizableWords  {
     static var okay = "Okay"
     static var noConnection = "No Connection..."
     static var loading = "loading..."
-    static var newsList = "News List"
+    static var newsList = "All News"
     static var description = "Description"
     static var content = "Content"
+    static var selectCountry = "Select Country"
+    static var selectCat = "Select Category"
 
-
-
-
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 //Builder: initialize ViewController, ViewModel and Router
 struct NewsListBuilder {
-
+    
     /// get ViewController instanse
     static func viewController() -> ViewController {
         let rep = LiveNewsListRepository()
@@ -19,7 +19,7 @@ struct NewsListBuilder {
         let viewController : NewsListViewController = UIStoryboard.storyboard(.main).instantiateViewController()
         viewController.set(withViewModel: viewModel, router: router)
         router.viewController = viewController
-
+        
         return viewController
     }
     

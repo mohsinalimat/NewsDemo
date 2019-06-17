@@ -16,7 +16,7 @@ class NewsListViewController: ViewController {
     private var router: NewsListRouter!
     private let disposeBag = DisposeBag()
     var viewModel: NewsListViewModel!
-
+    
     // MARK: IBOutlet
     @IBOutlet var tableView : UITableView!
     
@@ -41,7 +41,7 @@ class NewsListViewController: ViewController {
 // MARK: Setup
 private extension NewsListViewController {
     
-
+    
     
     /// setup things related to views set title and add pull to refrsh to table
     func setupViews() {
@@ -51,6 +51,8 @@ private extension NewsListViewController {
         addPullToRefresh()
     }
     
+    
+    
     /// Data binding
     func setupRx() {
         handleViewModelActivityIndicatorStatus()
@@ -58,6 +60,7 @@ private extension NewsListViewController {
         bindViewModelData()
         handleCellTap()
         handleViewModelErrors()
+        addBarButton()
         
     }
 }
@@ -71,9 +74,9 @@ private extension NewsListViewController {
     func bindViewModelData()  {
         viewModel.articleList.asObservable().bind(to: tableView.rx.items(cellIdentifier:  NewsListItemCell.identifier(), cellType: NewsListItemCell.self)) {[weak self] (row, element, cell) in
             if let title = self?.viewModel.getArticleTitle(for: row),
-            let date = self?.viewModel.getArticleTime(for: row),
-            let source = self?.viewModel.getArticleSource(for: row),
-            let imageURL = self?.viewModel.getArticleimageURL(for: row){
+                let date = self?.viewModel.getArticleTime(for: row),
+                let source = self?.viewModel.getArticleSource(for: row),
+                let imageURL = self?.viewModel.getArticleimageURL(for: row){
                 cell.configure(with: title, date: date, source: source, imageURL: imageURL)
             }
             }
@@ -162,6 +165,15 @@ private extension NewsListViewController {
     }
     
     func setTitle() {
-        self.title = viewModel.getTitle()
+        viewModel.screenTitle.asObservable().subscribe(onNext: { [weak self] title in
+            self?.title = title
+        }).disposed(by: disposeBag)
+    }
+    func addBarButton() {
+        let filterBarButton = UIBarButtonItem.init(image: #imageLiteral(resourceName: "filter"), style: .done, target: self, action: #selector(filterAction))
+        navigationItem.rightBarButtonItems = [filterBarButton]
+    }
+    @objc func filterAction(){
+        router.showFilter(selectedCountryCode:viewModel.selectedCountryCode,selectedCategoryCode:viewModel.selectedCategoryCode)
     }
 }

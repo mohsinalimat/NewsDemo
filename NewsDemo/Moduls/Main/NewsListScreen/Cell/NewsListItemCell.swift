@@ -14,7 +14,7 @@ class NewsListItemCell: UITableViewCell {
     //MARK: Outlets
     @IBOutlet weak var titLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
-
+    
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var timelabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
@@ -26,7 +26,7 @@ class NewsListItemCell: UITableViewCell {
         
         self.timelabel.textColor = Colors.brandGray
         self.timelabel.font = FontManager.APPLight.fontWith(size: 12)
-
+        
         self.sourceLabel.textColor = Colors.brandMedGreen
         self.sourceLabel.font = FontManager.APPRegular.fontWith(size: 12)
         self.titLabel.text = ""
@@ -36,15 +36,33 @@ class NewsListItemCell: UITableViewCell {
         
     }
     
-    //MARK Methods
+    
     func configure(with title: String,date: String,source: String,imageURL: String){
+        setAlignment(title)
         self.titLabel.text = title
         self.timelabel.text = date
         self.sourceLabel.text = source
         CashImage.default.load(imageView: self.itemImageView, url: imageURL)
         
     }
-        
+    
+    //MARK setAlignment
+    // check if the cell is arabic  and make it right to left
+    // else keep it left
+    fileprivate func setAlignment(_ title: String) {
+        if title.isArabic{
+            self.containerView.semanticContentAttribute = .forceRightToLeft
+            self.titLabel.textAlignment = .right
+            self.timelabel.textAlignment = .right
+            self.sourceLabel.textAlignment = .left
+        }
+        else {
+            self.containerView.semanticContentAttribute = .forceLeftToRight
+            self.titLabel.textAlignment = .left
+            self.timelabel.textAlignment = .left
+            self.sourceLabel.textAlignment = .right
+        }
+    }
     open class func identifier() -> String {
         return String(describing: NewsListItemCell.self)
     }

@@ -9,12 +9,12 @@
 import RxSwift
 
 class SplashViewModel:ViewModel {
-
+    
     // MARK: Variable
     let networkSubject = BehaviorSubject<Bool>(value: false)
-
+    
     override init() {
-       super.init()
+        super.init()
     }
 }
 

@@ -19,7 +19,7 @@ class ActivityIndicator {
         activityLabel.text = title
         activityLabel.textColor  = Colors.brandwhite
         activityLabel.font = FontManager.APPRegular.fontWith(size: 18)
-
+        
         activityLabel.sizeToFit()
         
         let xPoint = navigationItem.accessibilityFrame.midX

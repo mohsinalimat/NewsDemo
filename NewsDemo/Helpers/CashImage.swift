@@ -12,8 +12,8 @@ import UIKit
 /// this class to load and cash images
 class CashImage: NSObject {
     static let `default` = CashImage()
-
-     let cache = NSCache<AnyObject,AnyObject>()
+    
+    let cache = NSCache<AnyObject,AnyObject>()
     
     /// CashImage init method
     ///
@@ -21,7 +21,7 @@ class CashImage: NSObject {
         cache.name = "NewsDemoCashImage"
         cache.countLimit = 20
         cache.totalCostLimit = 15
-}
+    }
     /// load image from cach
     ///
     /// - Parameter key: key
@@ -51,20 +51,20 @@ class CashImage: NSObject {
         /// i add this method  to  UIImageView class you can show and hide
         /// ActivityIndicator on any imageview  with easy way
         imageView.image = nil
-
+        
         /// check if image cached or not if exist load it from the cach if not load it
         if  CashImage.default.getImageFor(key: url) != nil{
             DispatchQueue.main.async {
-            imageView.showActivityIndicator()
-            let image =  CashImage.default.getImageFor(key: url)!
-            imageView.image = image
-            imageView.hideActivityIndicator()
+                imageView.showActivityIndicator()
+                let image =  CashImage.default.getImageFor(key: url)!
+                imageView.image = image
+                imageView.hideActivityIndicator()
             }
         }
         else{
             CashImage.default.loadImageFor(imageView:imageView,url: url)
         }
-  }
+    }
     
     
     /// load image from server
@@ -74,7 +74,7 @@ class CashImage: NSObject {
     ///   - url: image url
     func loadImageFor(imageView : UIImageView ,url :String){
         imageView.showActivityIndicator()
-
+        
         let imageURL = URL(string: url)
         var image: UIImage?
         if let imgurl = imageURL {
@@ -84,7 +84,9 @@ class CashImage: NSObject {
                     if imageData != nil {
                         image = UIImage(data: imageData! as Data)
                         imageView.image = image
-                        CashImage.default.saveImage(image: image! ,key: url)
+                        if image != nil {
+                            CashImage.default.saveImage(image: image! ,key: url)
+                        }
                         imageView.hideActivityIndicator()
                         
                     } else {

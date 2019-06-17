@@ -14,7 +14,7 @@ class NewsDetailsViewController: ViewController {
     
     // MARK: Variable
     var viewModel: NewsDetailsViewModel!
-    private var router: NewsDetailsRouter!
+    private var router: Router!
     private let disposeBag = DisposeBag()
     
     // MARK: IBOutlet
@@ -32,9 +32,10 @@ class NewsDetailsViewController: ViewController {
     // MARK: Methods
     
     /// inject viewModel and router into controller
-    func set(withViewModel viewModel: NewsDetailsViewModel, router: NewsDetailsRouter) {
+    func set(withViewModel viewModel: NewsDetailsViewModel) {
         self.viewModel = viewModel
-        self.router = router
+        self.router = Router()
+        self.router.viewController = self
     }
     
     
@@ -57,7 +58,7 @@ private extension NewsDetailsViewController {
 // MARK: Setup Methods
 private extension NewsDetailsViewController {
     
-       /// handel error msg from viewModel
+    /// handel error msg from viewModel
     func handleViewModelErrors() {
         viewModel.errorSubject.subscribe({ [weak self] (event) in
             if let msg =  event.element {
@@ -71,30 +72,45 @@ private extension NewsDetailsViewController {
     }
 }
 extension NewsDetailsViewController:UITableViewDelegate, UITableViewDataSource {
-
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-   return viewModel.getNumberOfRows()
     
-}
-
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row == 0{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getNumberOfRows()
+        
+    }
+    
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+            return getHeaderCell(tableView, indexPath)
+        }
+        else {
+            return getContentCell(tableView)
+        }
+        
+    }
+    func getHeaderCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         let cell:NewsListItemCell = tableView.dequeueReusableCell(withIdentifier: NewsListItemCell.identifier(), for: indexPath) as! NewsListItemCell
-         let title = self.viewModel.getArticleTitle()
-            let date = self.viewModel.getArticleTime()
-            let source = self.viewModel.getArticleSource()
-            let imageURL = self.viewModel.getArticleimageURL()
-            cell.configure(with: title, date: date, source: source, imageURL: imageURL)
-        
-        return cell
-    }
-    else {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "detailsCell")!        
-        cell.textLabel?.attributedText = self.viewModel.getArticleDetails()
+        let title = self.viewModel.getArticleTitle()
+        let date = self.viewModel.getArticleTime()
+        let source = self.viewModel.getArticleSource()
+        let imageURL = self.viewModel.getArticleimageURL()
+        cell.configure(with: title, date: date, source: source, imageURL: imageURL)
         
         return cell
     }
     
-}
-
+    fileprivate func getContentCell(_ tableView: UITableView) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "detailsCell")!
+        cell.textLabel?.attributedText = self.viewModel.getArticleDetails()
+        if (cell.textLabel?.attributedText?.string.isArabic) ?? false{
+            cell.textLabel?.textAlignment = .right
+        }
+        else {
+            cell.textLabel?.textAlignment = .left
+        }
+        return cell
+    }
 }

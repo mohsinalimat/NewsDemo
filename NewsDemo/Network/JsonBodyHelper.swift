@@ -18,6 +18,8 @@ class JsonBodyHelper {
         static let page = "page"
         static let pageSize = "pageSize"
         static let country = "country"
+        static let category = "category"
+
     }
     
     private class  func getDefaultParameters() -> Parameters  {
@@ -31,11 +33,15 @@ class JsonBodyHelper {
     }
     
    
-    class func formatBodyForGetNewsList(page: Int, pageSize: Int,country:String) -> Parameters  {
+    class func formatBodyForGetNewsList(page: Int, pageSize: Int,country:String, category:String) -> Parameters  {
         var parameters :Parameters = getDefaultParameters()
          parameters[Keys.page] = page
         parameters[Keys.pageSize] = pageSize
         parameters[Keys.country] = country
+        if category != "" {
+            parameters[Keys.category] = category
+
+        }
         return parameters
     }
 

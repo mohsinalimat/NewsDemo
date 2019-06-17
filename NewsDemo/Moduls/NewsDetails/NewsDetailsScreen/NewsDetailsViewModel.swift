@@ -13,7 +13,7 @@ class NewsDetailsViewModel :ViewModel{
     // MARK: Variable
     private let  article:Article!
     private let disposeBag = DisposeBag()
-
+    
     
     init(article:Article) {
         self.article = article
@@ -35,7 +35,7 @@ class NewsDetailsViewModel :ViewModel{
     func getArticleimageURL() -> String {
         return self.article.urlToImage ?? ""
     }
-
+    
     
     func getArticleDetails() -> NSAttributedString {
         let headerAttributes = [NSAttributedString.Key.foregroundColor: Colors.brandBlack,
@@ -55,8 +55,8 @@ class NewsDetailsViewModel :ViewModel{
     func getNumberOfRows() -> Int {
         return 2
     }
-   
     
-   
+    
+    
 }
 
