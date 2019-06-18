@@ -19,21 +19,13 @@ class NewsListItemCell: UITableViewCell {
     @IBOutlet weak var timelabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
     
-    override func awakeFromNib() {
+
+    
+   override func awakeFromNib() {
         super.awakeFromNib()
-        self.titLabel.textColor = Colors.brandBlack
-        self.titLabel.font = FontManager.APPMedium.fontWith(size: 15)
-        
-        self.timelabel.textColor = Colors.brandGray
-        self.timelabel.font = FontManager.APPLight.fontWith(size: 12)
-        
-        self.sourceLabel.textColor = Colors.brandMedGreen
-        self.sourceLabel.font = FontManager.APPRegular.fontWith(size: 12)
-        self.titLabel.text = ""
-        self.timelabel.text = ""
-        self.sourceLabel.text = ""
-        self.itemImageView?.image = #imageLiteral(resourceName: "placeholder")
-        containerView.layer.cornerRadius = 10.0
+        setFontsAndColor()
+        setPlaceHolderData()
+        setCornerRadius()
         
     }
     
@@ -67,12 +59,26 @@ class NewsListItemCell: UITableViewCell {
     open class func identifier() -> String {
         return String(describing: NewsListItemCell.self)
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
+     func setFontsAndColor() {
+        self.titLabel.textColor = Colors.brandBlack
+        self.titLabel.font = FontManager.APPMedium.fontWith(size: 15)
+        
+        self.timelabel.textColor = Colors.brandGray
+        self.timelabel.font = FontManager.APPLight.fontWith(size: 12)
+        self.sourceLabel.textColor = Colors.brandMedGreen
+        self.sourceLabel.font = FontManager.APPRegular.fontWith(size: 12)
+    }
+    func setPlaceHolderData() {
         self.titLabel.text = ""
         self.timelabel.text = ""
         self.sourceLabel.text = ""
         self.itemImageView?.image = #imageLiteral(resourceName: "placeholder")
+    }
+     func setCornerRadius() {
+        containerView.layer.cornerRadius = 10.0
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        setPlaceHolderData()
     }
 }
