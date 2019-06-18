@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J13-4W-G16">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="J13-4W-G16">
                                 <rect key="frame" x="-1" y="-1" width="102" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="UiU-uF-LA1"/>
@@ -86,4 +86,7 @@
             <point key="canvasLocation" x="-106.40000000000001" y="262.21889055472263"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="placeholder" width="350" height="350"/>
+    </resources>
 </document>

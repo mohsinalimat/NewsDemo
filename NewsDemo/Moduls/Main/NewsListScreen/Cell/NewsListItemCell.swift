@@ -32,6 +32,7 @@ class NewsListItemCell: UITableViewCell {
         self.titLabel.text = ""
         self.timelabel.text = ""
         self.sourceLabel.text = ""
+        self.itemImageView?.image = #imageLiteral(resourceName: "placeholder")
         containerView.layer.cornerRadius = 10.0
         
     }
@@ -42,7 +43,7 @@ class NewsListItemCell: UITableViewCell {
         self.titLabel.text = title
         self.timelabel.text = date
         self.sourceLabel.text = source
-        CashImage.default.load(imageView: self.itemImageView, url: imageURL)
+        self.itemImageView.loadImageFromUrl(imageURL, andPlaceHolder: #imageLiteral(resourceName: "placeholder"))
         
     }
     
@@ -65,5 +66,13 @@ class NewsListItemCell: UITableViewCell {
     }
     open class func identifier() -> String {
         return String(describing: NewsListItemCell.self)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.titLabel.text = ""
+        self.timelabel.text = ""
+        self.sourceLabel.text = ""
+        self.itemImageView?.image = #imageLiteral(resourceName: "placeholder")
     }
 }

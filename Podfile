@@ -11,6 +11,7 @@ target 'NewsDemo' do
   pod 'RxCocoa', '5.0.0'
   pod 'ReachabilitySwift', '4.3.1'
   pod 'ESPullToRefresh', '2.9'
+  pod 'SDWebImage', '5.0.6'
 
   target 'NewsDemoTests' do
     inherit! :search_paths

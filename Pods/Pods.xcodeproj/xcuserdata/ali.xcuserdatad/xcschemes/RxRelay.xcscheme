@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8578D280974C1183291708F83978E9E9"
+               BlueprintIdentifier = "D9A0FEC4074D5EB87946893F335135A4"
                BuildableName = "RxRelay.framework"
                BlueprintName = "RxRelay"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8578D280974C1183291708F83978E9E9"
+            BlueprintIdentifier = "D9A0FEC4074D5EB87946893F335135A4"
             BuildableName = "RxRelay.framework"
             BlueprintName = "RxRelay"
             ReferencedContainer = "container:Pods.xcodeproj">

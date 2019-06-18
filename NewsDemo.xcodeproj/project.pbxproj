@@ -60,7 +60,6 @@
 		41E6941C22B6B89A0051DCD6 /* NewsListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E6940722B6B89A0051DCD6 /* NewsListItemCell.xib */; };
 		41E6941D22B6B89A0051DCD6 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6940822B6B89A0051DCD6 /* NewsListViewController.swift */; };
 		41E6941F22B6C7800051DCD6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6941E22B6C7800051DCD6 /* DateExtension.swift */; };
-		41E6942122B6C82E0051DCD6 /* CashImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6942022B6C82E0051DCD6 /* CashImage.swift */; };
 		41E6942322B6C83F0051DCD6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6942222B6C83F0051DCD6 /* UIImageView+Extension.swift */; };
 		41E6942822B6D1110051DCD6 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6942422B6D1110051DCD6 /* NewsDetailsViewController.swift */; };
 		41E6942922B6D1110051DCD6 /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6942522B6D1110051DCD6 /* NewsDetailsViewModel.swift */; };
@@ -139,7 +138,6 @@
 		41E6940722B6B89A0051DCD6 /* NewsListItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsListItemCell.xib; sourceTree = "<group>"; };
 		41E6940822B6B89A0051DCD6 /* NewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		41E6941E22B6C7800051DCD6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		41E6942022B6C82E0051DCD6 /* CashImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashImage.swift; sourceTree = "<group>"; };
 		41E6942222B6C83F0051DCD6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		41E6942422B6D1110051DCD6 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		41E6942522B6D1110051DCD6 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 		41E693AC22B6B2910051DCD6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				41E6942022B6C82E0051DCD6 /* CashImage.swift */,
 				41C0EFE722B831520023E474 /* FilterList.swift */,
 				41E693AD22B6B2910051DCD6 /* FontManager.swift */,
 				41E693AE22B6B2910051DCD6 /* ToastView.swift */,
@@ -608,6 +605,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -619,6 +617,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -683,7 +682,6 @@
 				41E693DC22B6B2910051DCD6 /* UIViewController+StoryboardIdentifier.swift in Sources */,
 				41E693E322B6B7270051DCD6 /* Article.swift in Sources */,
 				41E693D822B6B2910051DCD6 /* URLExtension.swift in Sources */,
-				41E6942122B6C82E0051DCD6 /* CashImage.swift in Sources */,
 				41E6941822B6B89A0051DCD6 /* NewsListViewModel.swift in Sources */,
 				41E6941422B6B89A0051DCD6 /* SplashViewController.swift in Sources */,
 				41E693CE22B6B2910051DCD6 /* LocalizableWords.swift in Sources */,

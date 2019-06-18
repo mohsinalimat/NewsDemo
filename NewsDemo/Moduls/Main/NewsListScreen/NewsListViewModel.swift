@@ -23,7 +23,6 @@ class NewsListViewModel:ViewModel {
         self.NewsListRepo = NewsListRepo
         super.init()
         setupRx()
-        getNewsList()
     }
     
     //    func getTitle() -> String {
